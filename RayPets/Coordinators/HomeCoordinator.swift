@@ -26,3 +26,79 @@ extension HomeCoordinator: HomeViewControllerDelegate {
     
   }
 }
+
+//MARK: - SelectVisitTypeViewControllerDelegate
+
+extension PetAppointmentBuilderCoordinator: SelectVisitTypeViewController{
+  
+  public func selectVisitTypeViewController(_ controller: SelectVisitTypeViewController, didSelect visitType: VisitType){
+    
+    builder.visitType = visitType
+    
+    switch visitType {
+    case .well:
+      presentNoAppointmentViewController()
+      
+    case .sick:
+      presentSelectPainLevelCoordinator()
+      
+    }
+  }
+  
+  private func presentNoAppointmentViewController() {
+    let viewController = NoAppointmentRequiredViewController.instantiate(delegate: self)
+    router.present(viewController, animated: true)
+  }
+  
+  private func presentSelectPainLevelCoordinator() {
+    let viewController = SelectPainLevelViewController.instantiate(delegate: self)
+    router.present(viewController, animated: true)
+  }
+}
+
+//MARK: - SelectPainLevelViewControllerDelegate
+
+extension PetAppointmentBuilderCoordinator: SelectPainLevelViewControllerDelegate {
+  public func selectPainLevelViewController(_ controller: SelectPainLevelViewController, didSelect painLevel: PainLevel) {
+    builder.painLevel = painLevel
+    
+    switch painLevel {
+    case .none, .little:
+      presentFakingItViewController()
+    case .moderate, .severe, .worstPossible:
+      presentNoAppointmentViewController()
+    }
+  }
+  
+  private func presentFakingItViewController() {
+    let viewController = FakingItViewController.instantiate(delegate: self)
+    router.present(viewController, animated: true)
+  }
+}
+
+//MARK: -FakingItViewControllerDelegate
+
+extension PetAppointmentBuilderCoordinator: FakingItViewControllerDelegate {
+  
+  
+  public func fakingItViewControllerPressedNotFake(_ controller: FakingItViewController) {
+    presentNoAppointmentViewController()
+  }
+  
+  public func fakingItViewControllerPressedIsFake(_ controller: FakingItViewController) {
+    router.dismiss(animated: true)
+  }
+  
+  
+}
+
+//MARK: - NoAppointmentRequiredViewControllerDelegate
+
+extension PetAppointmentBuilderCoordinator : NoAppointmentRequiredViewControllerDelegate {
+  public func noAppointmentViewControllerDidPressOkay(_ controller: NoAppointmentRequiredViewController) {
+    router.dismiss(animated: true)
+  }
+  
+  
+  
+}
