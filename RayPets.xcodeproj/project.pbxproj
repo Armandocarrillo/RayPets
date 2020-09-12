@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10499556250D77DF0064CB02 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10499555250D77DF0064CB02 /* ModalNavigationRouter.swift */; };
 		10EB5529250C8290007539E1 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB5528250C8290007539E1 /* AppDelegateRouter.swift */; };
 		10EB552B250C841F007539E1 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB552A250C841F007539E1 /* HomeCoordinator.swift */; };
 		10EB552D250C8A7E007539E1 /* PetAppointmentBuilderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EB552C250C8A7E007539E1 /* PetAppointmentBuilderCoordinator.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10499555250D77DF0064CB02 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
 		10EB5528250C8290007539E1 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		10EB552A250C841F007539E1 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		10EB552C250C8A7E007539E1 /* PetAppointmentBuilderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAppointmentBuilderCoordinator.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				428EF7C7213471F100E953CF /* Router.swift */,
 				10EB5528250C8290007539E1 /* AppDelegateRouter.swift */,
+				10499555250D77DF0064CB02 /* ModalNavigationRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			files = (
 				428EF7AE21337BCB00E953CF /* PainLevel.swift in Sources */,
 				428EF7AC21337A3400E953CF /* PainLevelViewController.swift in Sources */,
+				10499556250D77DF0064CB02 /* ModalNavigationRouter.swift in Sources */,
 				10EB552B250C841F007539E1 /* HomeCoordinator.swift in Sources */,
 				428EF7B52133806C00E953CF /* Coordinator.swift in Sources */,
 				10EB552D250C8A7E007539E1 /* PetAppointmentBuilderCoordinator.swift in Sources */,

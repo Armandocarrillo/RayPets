@@ -98,7 +98,5 @@ extension PetAppointmentBuilderCoordinator : NoAppointmentRequiredViewController
   public func noAppointmentViewControllerDidPressOkay(_ controller: NoAppointmentRequiredViewController) {
     router.dismiss(animated: true)
   }
-  
-  
-  
+    
 }
