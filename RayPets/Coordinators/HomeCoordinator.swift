@@ -23,13 +23,15 @@ public class HomeCoordinator: Coordinator {
 //MARK: - HomeViewControllerDelegate
 extension HomeCoordinator: HomeViewControllerDelegate {
   public func homeViewControllerDidPressScheduleAppointment(_ viewController: HomeViewController) {
-    
+    let router = ModalNavigationRouter(parentViewController: viewController)
+    let coordinator = PetAppointmentBuilderCoordinator(router: router)
+    presentChild(coordinator, animated: true)
   }
 }
 
 //MARK: - SelectVisitTypeViewControllerDelegate
 
-extension PetAppointmentBuilderCoordinator: SelectVisitTypeViewController{
+extension PetAppointmentBuilderCoordinator: SelectVisitTypeViewControllerDelegate{
   
   public func selectVisitTypeViewController(_ controller: SelectVisitTypeViewController, didSelect visitType: VisitType){
     
